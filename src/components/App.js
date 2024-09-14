@@ -22,7 +22,7 @@ class App extends Component {
   handleKeyDown(event) {
     if (event.key === "ArrowRight") {
       this.setState((prevState) => {
-        const newPosi = prevState.posi + 10;
+        const newPosi = prevState.posi + 5;
         return {
           posi: newPosi,
           ballPosition: { left: `${newPosi}px` },
