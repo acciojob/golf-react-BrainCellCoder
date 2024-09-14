@@ -4,7 +4,6 @@ import "../styles/App.css";
 const App = () => {
   const [renderBall, setRenderBall] = useState(false);
   const [posi, setPosi] = useState(0);
-  const ballPosition = { left: `${posi}px` };
 
   const buttonClickHandler = () => {
     setRenderBall(true);
@@ -12,7 +11,7 @@ const App = () => {
 
   const handleKeyDown = (event) => {
     if (event.key === "ArrowRight") {
-      setPosi((prevPosi) => prevPosi + 5);
+      setPosi(posi + 5);
     }
   };
 
@@ -23,12 +22,12 @@ const App = () => {
         window.removeEventListener("keydown", handleKeyDown);
       };
     }
-  }, [renderBall]);
+  }, [renderBall, posi]);
 
   return (
     <div className="playground">
       {renderBall ? (
-        <div className="ball" style={ballPosition}></div>
+        <div className="ball" style={{ left: `${posi}px` }}></div>
       ) : (
         <button className="start" onClick={buttonClickHandler}>
           Start
