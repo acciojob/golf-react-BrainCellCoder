@@ -3,7 +3,7 @@ import "../styles/App.css";
 
 const App = () => {
   const [renderBall, setRenderBall] = useState(false);
-  const [posi, setPosi] = useState(0);
+  const [posi, setPosi] = useState(5);
 
   const buttonClickHandler = () => {
     setRenderBall(true);
