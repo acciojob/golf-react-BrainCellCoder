@@ -27,7 +27,10 @@ const App = () => {
   return (
     <div className="playground">
       {renderBall ? (
-        <div className="ball" style={{ left: `${posi}px` }}></div>
+        <div
+          className="ball"
+          style={{ position: "absolute", left: `${posi}px` }}
+        ></div>
       ) : (
         <button className="start" onClick={buttonClickHandler}>
           Start
